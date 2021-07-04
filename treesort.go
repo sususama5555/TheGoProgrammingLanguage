@@ -34,6 +34,7 @@ func appendValues(values []int, t *tree) []int {
 	}
 	return values
 }
+
 func add(t *tree, value int) *tree {
 	if t == nil {
 		// Equivalent to return &tree{value: value}.
