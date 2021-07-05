@@ -24,7 +24,20 @@ var movies = []Movie{
 }
 
 func main() {
-	data, err := json.Marshal(movies)
+	Marshal(movies)
+	MarshalIndent(movies)
+}
+
+func Marshal(jsonMovie []Movie) {
+	data, err := json.Marshal(jsonMovie)
+	if err != nil {
+		log.Fatalf("JSON marshaling failed: %s", err)
+	}
+	fmt.Printf("%s\n", data)
+}
+
+func MarshalIndent(jsonMovie []Movie) {
+	data, err := json.MarshalIndent(jsonMovie, "", " ")
 	if err != nil {
 		log.Fatalf("JSON marshaling failed: %s", err)
 	}
