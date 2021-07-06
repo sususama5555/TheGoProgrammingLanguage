@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/", handler) // each request calls handler
+	http.HandleFunc("/", handler)    // each request calls handler
 	http.HandleFunc("/hello", hello) // each request calls handler
 	webServer := "localhost:8000"
 	fmt.Printf("http listen on %s\n", webServer)
